@@ -27,6 +27,10 @@ def create_task
         sh "tmux send-keys -t #{@session.name}:#{i} '#{cmd}' C-m"
       end
     end
+    
+    # 接続
+    sh "tmux select-window -t #{@session.name}:0"
+    sh "tmux attach-session -t #{@session.name}"
   end
 end
 
