@@ -26,7 +26,7 @@ namespace "symlink" do
     if File.exist?("#{HOME_DIR}/#{file}")
       puts "#{HOME_DIR}/#{file} file exist."
     else
-      sh "ln -s #{CURRENT_DIR}/#{file}#{HOME_DIR}/#{file}"
+      sh "ln -s #{CURRENT_DIR}/#{file} #{HOME_DIR}/#{file}"
     end
   end
 end
