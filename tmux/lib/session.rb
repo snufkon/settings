@@ -6,4 +6,9 @@ class Session
     @windows = []
     @commands = []
   end
+
+  def window(name)
+    w = block_given? ? Window.new(name, yield) : Window.new(name, [])
+    @windows << w
+  end
 end
