@@ -9,3 +9,9 @@ alias zsh='/usr/local/bin/zsh'
 export EDITOR=emacsclient
 export VISUAL=emacsclient
 
+# for rvm
+if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then source "$HOME/.rvm/scripts/rvm" ; fi
+
+# for rails
+alias r=rails
+
