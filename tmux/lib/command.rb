@@ -9,7 +9,7 @@ end
 def create_task(session)
   desc "create #{session.name} session"
   task "#{session.name}" do
-    sh "tmux new-session -d -s #{session.name} -n root" unless has_session?(session.name)
+    sh "tmux new-session -d -s #{session.name} -n #{session.windows[0].name}" unless has_session?(session.name)
     session.windows.each_with_index do |w, i|
       sh "tmux new-window -d -k -t #{session.name}:#{i} -n #{w.name}"
 
